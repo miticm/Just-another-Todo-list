@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tatum Tots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
+
 <body>
   <header>
     <h1>Tatum Tots</h1>
@@ -16,31 +19,39 @@
   <main>
     <form id="flickForm">
       <div class="input-group">
-        <input
-          type="text"
-          class="input-group-field"
-          placeholder="Name a flick"
-          name="flickName"
-          autofocus
-          required
-        >
+        <input type="text" class="input-group-field" placeholder="Name a flick" name="flickName" autofocus required>
         <div class="input-group-button">
-          <button
-            class="button success"
-            type="submit"
-          >
+          <button class="button success" type="submit">
             Add flick
           </button>
         </div>
       </div>
     </form>
-
     <ul id="flickList" class="no-bullet">
       <li class="template flick grid-x align-middle">
         <span class="flickName cell auto"></span>
         <span class="actions cell shrink">
           <div class="button-group">
-              <button class="button warning">fav</button><button class="button alert">del</button>
+
+            <button class="button">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+            <button class="button warning">
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </button>
+
+            <button class="button">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </button>
+
+            <button class="button">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+
+            <button class="button alert">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+
           </div>
         </span>
       </li>
@@ -49,4 +60,5 @@
 
   <script src="index.js"></script>
 </body>
+
 </html>

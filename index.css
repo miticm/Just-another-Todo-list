@@ -1,8 +1,13 @@
-main {
+main{
     width: 80%;
     background-color: whitesmoke;
     margin: 1rem auto;
-  }
+}
+header{
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
+}
   
   .actions .button {
     margin-bottom: 0;
@@ -17,4 +22,8 @@ main {
   
   .template {
     display: none;
+  }
+
+  .fa-star{
+    color: white;
   }
