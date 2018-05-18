@@ -27,8 +27,15 @@ const app = {
 
       item.querySelector('#editBtn').addEventListener('click',()=>{
         const textSpan = item.querySelector('.flickName')
-        textSpan.contentEditable = 'true'
-        textSpan.focus()
+        if(textSpan.contentEditable == 'true'){
+          textSpan.contentEditable = 'false'
+        }else{
+          textSpan.contentEditable = 'true'
+          textSpan.focus()
+          textSpan.addEventListener('keypress',(e)=>{
+            if(e.keyCode === 13){textSpan.contentEditable = 'false'}
+          })
+        }
       })
 
       item.querySelector('#favBtn').addEventListener('click',()=>{
@@ -43,7 +50,7 @@ const app = {
         this.list.insertBefore(item, this.list.firstChild)
         this.buttonDisabled()
       })
-      
+
       item.querySelector('#downBtn').addEventListener('click',()=>{
         item.parentNode.removeChild(item)
         this.list.appendChild(item)
