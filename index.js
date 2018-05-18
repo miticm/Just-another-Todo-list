@@ -23,6 +23,9 @@ const app = {
 
       item.querySelector("#deleteBtn").addEventListener('click',()=>{
         item.parentNode.removeChild(item)
+        if(this.list.childElementCount > 0){
+          this.buttonDisabled()
+        }
       })
 
       item.querySelector('#editBtn').addEventListener('click',()=>{
