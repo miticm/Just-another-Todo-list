@@ -20,6 +20,14 @@ const app = {
       item
         .querySelector('.flickName')
         .textContent = flick.name
+      item.querySelector("#deleteBtn").addEventListener('click',()=>{
+        item.parentNode.removeChild(item)
+      })
+      item.querySelector('#editBtn').addEventListener('click',()=>{
+        const textSpan = item.querySelector('.flickName')
+        textSpan.contentEditable = 'true'
+        textSpan.focus()
+      })
   
       return item
     },

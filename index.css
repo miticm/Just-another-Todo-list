@@ -27,3 +27,6 @@ header{
   .fa-star{
     color: white;
   }
+  .input-group{
+    margin: 0;
+  }
