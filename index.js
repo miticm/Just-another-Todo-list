@@ -22,7 +22,10 @@ const app = {
         .textContent = flick.name
 
       item.querySelector("#deleteBtn").addEventListener('click',()=>{
-        item.parentNode.removeChild(item)
+        item.style.opacity = '0'
+        setTimeout(() => {
+          item.remove()
+        }, 200);
         if(this.list.childElementCount > 0){
           this.buttonDisabled()
         }
@@ -49,14 +52,12 @@ const app = {
       })
 
       item.querySelector('#upBtn').addEventListener('click',()=>{
-        item.parentNode.removeChild(item)
-        this.list.insertBefore(item, this.list.firstChild)
+        this.list.insertBefore(item, item.previousSibling)
         this.buttonDisabled()
       })
 
       item.querySelector('#downBtn').addEventListener('click',()=>{
-        item.parentNode.removeChild(item)
-        this.list.appendChild(item)
+        item.nextSibling.insertAdjacentElement('afterend', item);
         this.buttonDisabled()
       })
   

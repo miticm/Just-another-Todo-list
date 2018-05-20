@@ -25,6 +25,10 @@ header {
 .template {
   display: none;
 }
+.flick{
+  opacity: 1;
+  transition: opacity 200ms linear;
+}
 
 .fa-star {
   color: white;
