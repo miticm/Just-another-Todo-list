@@ -22,13 +22,13 @@ const app = {
         .textContent = flick.name
 
       item.querySelector("#deleteBtn").addEventListener('click',()=>{
-        item.style.opacity = '0'
-        setTimeout(() => {
-          item.remove()
-        }, 200);
+        item.remove()
         if(this.list.childElementCount > 0){
           this.buttonDisabled()
         }
+        const index = this.flicks.indexOf(flick)
+        this.flicks.splice(index,1)
+        console.log(this.flicks)
       })
 
       item.querySelector('#editBtn').addEventListener('click',()=>{
@@ -54,11 +54,21 @@ const app = {
       item.querySelector('#upBtn').addEventListener('click',()=>{
         this.list.insertBefore(item, item.previousSibling)
         this.buttonDisabled()
+        const index = this.flicks.indexOf(flick)
+        const i = this.flicks[index]
+        this.flicks[index] = this.flicks[index-1]
+        this.flicks[index-1] = i
+        console.log(this.flicks)
       })
 
       item.querySelector('#downBtn').addEventListener('click',()=>{
         item.nextSibling.insertAdjacentElement('afterend', item);
         this.buttonDisabled()
+        const index = this.flicks.indexOf(flick)
+        const i = this.flicks[index]
+        this.flicks[index] = this.flicks[index+1]
+        this.flicks[index+1] = i
+        console.log(this.flicks)
       })
   
       return item
@@ -76,7 +86,9 @@ const app = {
       this.list.insertBefore(item, this.list.firstChild)
       this.buttonDisabled()
       f.reset()
+      console.log(this.flicks)
     },
+
     buttonDisabled(){
       this.list.childNodes.forEach(element => {
         element.querySelector('#upBtn').disabled = false
