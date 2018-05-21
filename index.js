@@ -1,5 +1,5 @@
-const app = {
-    init(selectors) {
+class App {
+    constructor(selectors) {
       this.flicks = []
       this.max = 0
       this.list = document.querySelector(selectors.listSelector)
@@ -11,7 +11,7 @@ const app = {
           ev.preventDefault()
           this.handleSubmit(ev)
         })
-    },
+    }
   
     renderListItem(flick) {
       const item = this.template.cloneNode(true)
@@ -72,7 +72,7 @@ const app = {
       })
   
       return item
-    },
+    }
   
     handleSubmit(ev) {
       const f = ev.target
@@ -87,7 +87,7 @@ const app = {
       this.buttonDisabled()
       f.reset()
       console.log(this.flicks)
-    },
+    }
 
     buttonDisabled(){
       this.list.childNodes.forEach(element => {
@@ -99,8 +99,7 @@ const app = {
     }
   }
 
-  
-  app.init({
+  const app = new App({
     formSelector: '#flickForm',
     listSelector: '#flickList',
     templateSelector: '.flick.template',
